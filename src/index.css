@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+:root {
+  --accent: #ff003c;
+  --bg: #050505;
+  --surface: #121214;
+  --surface-hover: #1c1c1f;
+  --text: #ffffff;
+  --text-muted: #8e8e93;
+  --border: rgba(255, 255, 255, 0.06);
+  --glass: rgba(18, 18, 20, 0.7);
+  --radius-lg: 20px;
+  --radius-md: 12px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: var(--font-sans);
+  overflow: hidden;
+  height: 100vh;
+}
+
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+}
+
+.channel-card-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 60, 0.15);
+  border-color: rgba(255, 0, 60, 0.3);
+}
+
+.hero-gradient {
+  background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+}
+
+.sidebar-item-active {
+  background: linear-gradient(90deg, rgba(255, 0, 60, 0.1) 0%, transparent 100%);
+  border-left: 3px solid var(--accent);
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.loading-pulse {
+  animation: pulse-soft 2s infinite ease-in-out;
+}
+
+/* Plyr Customization */
+.plyr {
+  --plyr-color-main: var(--accent);
+  border-radius: 0;
+}
+
+.plyr--full-ui {
+  height: 100%;
+}
+
+.plyr__video-wrapper {
+  background: #000;
+}
